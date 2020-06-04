@@ -1,23 +1,27 @@
 ﻿using Alura.ListaLeitura.App.Negocio;
 using Alura.ListaLeitura.App.Repositorio;
+using Microsoft.AspNetCore.Hosting;
 using System;
 
 namespace Alura.ListaLeitura.App
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            var _repo = new LivroRepositorioCSV();
+      var _repo = new LivroRepositorioCSV();
 
-            ImprimeLista(_repo.ParaLer);
-            ImprimeLista(_repo.Lendo);
-            ImprimeLista(_repo.Lidos);
-        }
+      IWebHost host = new WebHostBuilder()
+        .UseKestrel()
+        .UseStartup<Startup>()
+        .Build();
 
-        static void ImprimeLista(ListaDeLeitura lista)
-        {
-            Console.WriteLine(lista);
-        }
+      host.Run();
     }
+
+    static void ImprimeLista(ListaDeLeitura lista)
+    {
+      Console.WriteLine(lista);
+    }
+  }
 }

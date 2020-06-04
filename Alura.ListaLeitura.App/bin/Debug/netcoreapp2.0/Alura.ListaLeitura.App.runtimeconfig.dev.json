@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Ikaro\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Ikaro\\.nuget\\packages"
+    ]
+  }
+}
